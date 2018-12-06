@@ -3,7 +3,6 @@
 // custom js and GA event Tracking
 var WC = {
 
-
 // set your type to what attribute you want sent - title, alt, value, href, or text
 
     p: function (element, cat, action, type) {
