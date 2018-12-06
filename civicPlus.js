@@ -1,12 +1,11 @@
-//  Washington County website customization
+//  Website customizations
 
 // custom js and GA event Tracking
-var Lib = {
+var WC = {
 
 
 // set your type to what attribute you want sent - title, alt, value, href, or text
-// uncomment following line to test on any link click
-// p('a', 'hyperlink', 'Click link', 'text')
+
     p: function (element, cat, action, type) {
         $(element).each(function () {
             var label = type;
@@ -54,9 +53,9 @@ var Lib = {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    Lib.s();
-    Lib.x();
+    WC.s();
+    WC.x();
     // following is an example for tracking every hyperlink click
     //Change the 'a' below to a class or id ex: '.myClass' to get more specific
-    // Lib.p('a', 'hyperlink', 'Click link', 'text')
+    // WC.p('a', 'hyperlink', 'Click link', 'text')
 });
