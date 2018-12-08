@@ -23,21 +23,11 @@ var WC = {
         });
 
     },
-    s: function () {
-        $('#searchButton').click(function () {
-            ga('send', 'event', 'Search Term', 'Search', document.getElementById('q').value);
-        });
-        $('input#searchForm').keypress(function (event) {
-            if (event.keyCode == 13) {
-                ga('send', 'event', 'Search Term', 'Search', document.getElementById('q').value);
-            }
-        });
-    },
     x: function () {
         $('a').each(function () {
-            var href = this.href
+            var href = this.href.toLowerCase()
             var wash = document.location.host
-            var doc = '/DocumentCenter/View/'
+            var doc = '/documentcenter/view/'
             if (href.indexOf(wash) < 0) {
                 $(this).click(function () {
                     ga('send', 'event', 'external Link', this.href, this.text)
