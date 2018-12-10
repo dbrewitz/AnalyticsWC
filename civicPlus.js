@@ -1,9 +1,9 @@
-//  Website customizations
+//  Website customizations - David Brewitz - IT
 
 // custom js and GA event Tracking
 var WC = {
 
-// set your type to what attribute you want sent - title, alt, value, href, or text
+    // set your type to what attribute you want sent - title, alt, value, href, or text
 
     p: function (element, cat, action, type) {
         $(element).each(function () {
@@ -26,6 +26,7 @@ var WC = {
     x: function () {
         $('a').each(function () {
             var href = this.href.toLowerCase()
+            console.log(href)
             var wash = document.location.host
             var doc = '/documentcenter/view/'
             if (href.indexOf(wash) < 0) {
@@ -41,10 +42,13 @@ var WC = {
     },
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-    WC.s();
+if (document.readyState === 'complete') {
     WC.x();
-    // following is an example for tracking every hyperlink click
-    //Change the 'a' below to a class or id ex: '.myClass' to get more specific
-    // WC.p('a', 'hyperlink', 'Click link', 'text')
-});
+} else {
+    document.addEventListener('DOMContentLoaded', function () {
+        WC.x();
+        // following is an example for tracking every hyperlink click
+        // Change the 'a' below to a class or id ex: '.myClass' to get more specific
+        // WC.p('a', 'hyperlink', 'Click link', 'text')
+    });
+}
