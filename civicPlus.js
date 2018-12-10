@@ -26,7 +26,6 @@ var WC = {
     x: function () {
         $('a').each(function () {
             var href = this.href.toLowerCase()
-            console.log(href)
             var wash = document.location.host
             var doc = '/documentcenter/view/'
             if (href.indexOf(wash) < 0) {
